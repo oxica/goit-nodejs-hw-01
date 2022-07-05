@@ -1,0 +1,25 @@
+{
+  "name": "goit-nodejs-hw-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "srart": "node index",
+    "start:dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oxica/goit-nodejs-hw-01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oxica/goit-nodejs-hw-01/issues"
+  },
+  "homepage": "https://github.com/oxica/goit-nodejs-hw-01#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
