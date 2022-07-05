@@ -24,9 +24,27 @@ async function getContactById(contactId) {
   }
 }
 
-async function removeContact(contactId) {}
+async function updateSourceFile(instance) {
+  try {
+    fs.writeFile(contactsPath, JSON.stringify(instance, null, 2));
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-async function addContact(name, email, phone) {}
+async function addContact(name, email, phone) {
+  try {
+    const newContact = { id: v4(), name: name, email: email, phone: phone };
+    const allContacts = await listContacts();
+    const changedCollection = [...allContacts, newContact];
+    updateSourceFile(changedCollection);
+    return newContact;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function removeContact(contactId) {}
 
 module.exports = {
   listContacts,
