@@ -44,11 +44,21 @@ async function addContact(name, email, phone) {
   }
 }
 
-async function removeContact(contactId) {}
+async function removeContact(contactId) {
+  try {
+    const allContacts = await listContacts();
+    const changedCollection = allContacts.filter(({ id }) => id !== contactId);
+    updateSourceFile(changedCollection);
+    return allContacts.filter(({ id }) => id === contactId);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = {
   listContacts,
   getContactById,
   removeContact,
   addContact,
+  updateSourceFile,
 };
